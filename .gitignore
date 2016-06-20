@@ -31,5 +31,4 @@ mnist-pretrain-dbn.bin-*
 metastore_db
 *.ipynb*
 *.html
-Word2vec-index/
 *.conf
