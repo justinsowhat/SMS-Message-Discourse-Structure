@@ -47,7 +47,7 @@ public class NeuralNetworkModel {
 
         final int numInputs = 8;
         int outputNum = 2;
-        int iterations = 10000;
+        int iterations = 100000;
         long seed = 6;
 
 
