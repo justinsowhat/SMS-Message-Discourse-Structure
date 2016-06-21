@@ -22,13 +22,9 @@ import org.springframework.core.io.ClassPathResource;
 import java.util.Random;
 
 
-public class NeuralNetworkModel {
+public class SimpleNeuralNetworkModel {
 
-    private static Logger log = LoggerFactory.getLogger(NeuralNetworkModel.class);
-    // RNN dimensions
-//    public static final int HIDDEN_LAYER_WIDTH = 50;
-//    public static final int HIDDEN_LAYER_CONT = 2;
-//    public static final Random r = new Random(7894);
+    private static Logger log = LoggerFactory.getLogger(SimpleNeuralNetworkModel.class);
     private static final String FILENAME = "data.txt";
 
     public static void main(String[] args) throws  Exception {
