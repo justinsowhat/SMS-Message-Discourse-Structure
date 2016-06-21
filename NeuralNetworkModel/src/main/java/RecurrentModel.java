@@ -31,7 +31,7 @@ public class RecurrentModel {
 
     // RNN dimensions
     public static final int HIDDEN_LAYER_WIDTH = 5;
-    public static final int HIDDEN_LAYER_CONT = 2;
+    public static final int HIDDEN_LAYER_CONT = 1;
     public static final Random r = new Random(7894);
 
     public static void main(String[] args) throws Exception{
@@ -41,7 +41,7 @@ public class RecurrentModel {
         recordReader.initialize(new FileSplit(new ClassPathResource(FILENAME).getFile()));
         final int numInputs = 8;
         int outputNum = 2;
-        int iterations = 1000;
+        int iterations = 10000;
         long seed = 123;
         int labelIndex = 0;
         int numClasses = 2;
@@ -56,7 +56,7 @@ public class RecurrentModel {
         // some common parameters
         NeuralNetConfiguration.Builder builder = new NeuralNetConfiguration.Builder();
         builder.iterations(iterations);
-        builder.learningRate(0.001);
+        builder.learningRate(0.01);
         builder.optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT);
         builder.seed(seed);
         builder.biasInit(0);
@@ -95,7 +95,7 @@ public class RecurrentModel {
         MultiLayerConfiguration conf = listBuilder.build();
         MultiLayerNetwork net = new MultiLayerNetwork(conf);
         net.init();
-        net.setListeners(new ScoreIterationListener(100));
+        net.setListeners(new ScoreIterationListener(1000));
 
         DataSet test = testAndTrain.getTest();
 
